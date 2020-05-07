@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'SmartRoom-Angular'`, () => {
+  it(`should have as title 'angularPadel'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('SmartRoom-Angular');
+    expect(app.title).toEqual('angularPadel');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('SmartRoom-Angular app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angularPadel app is running!');
   });
 });
