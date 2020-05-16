@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// @ts-ignore
 import { LoginComponent } from './login/login.component';
-// @ts-ignore
 import {IndexcontentComponent} from './indexcontent/indexcontent.component';
-
 import { PicturesComponent } from './pictures/pictures.component';
 import { RegistroComponent } from './registro/registro.component';
-// @ts-ignore
 import {MenuComponent} from './menu/menu.component';
+import {PictureCreateUpdateComponent} from './pictures/picture_creat_update_dialog/picture-create-update.component';
 
 const routes: Routes = [
   {path: '', component: IndexcontentComponent},
@@ -16,7 +13,9 @@ const routes: Routes = [
   {path: 'inicio', component: IndexcontentComponent},
   {path: 'pictures', component: PicturesComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'pictures/update', component: PictureCreateUpdateComponent}
+
 ];
 
 @NgModule({

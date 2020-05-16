@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-title *ngIf="dialogMode==='create'"> Create Stock Alarm</mat-card-title>
+  <mat-card-title *ngIf="dialogMode==='update'"> Update Stock Alarm</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="pictureFrom">
+      <mat-form-field>
+        <input formControlName="owner" matInput placeholder="owner"
+               required type="text"/>
+      </mat-form-field>
+
+      <div formArrayName="stockAlarmArticle">
+        <h3>StockAlarm Articles</h3>
+        <div *ngFor="let stockAlarmArticle of picture.owner; let i=index">
+          <div [formGroupName]="i"></div>
+        </div>
+      </div>
+        <button (click)="create()" color="primary" mat-button [disabled]="!pictureFrom.valid">
+          Add Article</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<p>
+  Form Value: {{ pictureFrom.value | json }}
+</p>
+
+<mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Cancel</button>
+  <button (click)="createOrUpdate()" [mat-dialog-close]="true" [disabled]="!pictureFrom.valid"
+          mat-raised-button color="primary">{{dialogMode}}</button>
+</mat-dialog-actions>

@@ -10,15 +10,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-// import {
-//   MatDatepickerModule,
-//   MatNativeDateModule,
-//   MatFormFieldModule,
-//   MatInputModule, MatSelectModule
-// } from '@angular/material';
+import {
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatFormFieldModule,
+  MatInputModule, MatSelectModule, MatDialogModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PicturesComponent } from './pictures/pictures.component';
-// @ts-ignore
+import {MatCardModule} from '@angular/material/card';
+import {PictureCreateUpdateComponent} from './pictures/picture_creat_update_dialog/picture-create-update.component';
+import {CrudComponent} from './core/crud.component';
+import {MatTableModule} from '@angular/material/typings/esm5/table';
+import {MatIconModule} from '@angular/material/typings/icon';
 // import { HiComponent } from './hi/hi.component';
 
 @NgModule({
@@ -30,7 +34,9 @@ import { PicturesComponent } from './pictures/pictures.component';
     LoginComponent,
     PicturesComponent,
     RegistroComponent,
-    PicturesComponent
+    PicturesComponent,
+    PictureCreateUpdateComponent,
+    CrudComponent
     // HiComponent
   ],
   imports: [
@@ -41,12 +47,16 @@ import { PicturesComponent } from './pictures/pictures.component';
     HttpClientModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
-    // MatDatepickerModule,
+    MatDatepickerModule,
     BrowserModule,
-    // MatNativeDateModule,
-    // MatFormFieldModule,
-    BrowserAnimationsModule
-    // MatSelectModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatTableModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
