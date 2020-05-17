@@ -3,13 +3,12 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EMPTY, Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
-// @ts-ignore
-import {MatSnackBar} from '@angular/material';
 import {JwtHelperService} from '@auth0/angular-jwt';
 
 import {environment} from '../../environments/environment';
 import {Token} from './token.model';
 import {Error} from './error.model';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable()
 export class HttpService {
@@ -24,38 +23,27 @@ export class HttpService {
   private responseType: string;
   private successfulNotification = undefined;
 
-  private loginTime: Date;
-  private logoutTime: Date;
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router) {
     this.resetOptions();
   }
 
-  login(mobile: number, password: string, endPoint: string): Observable<any> {
-    return this.authBasic(mobile, password).post(endPoint).pipe(
+  login(email: string, password: string, endPoint: string): Observable<any> {
+    return this.authBasic(email, password).post(endPoint).pipe(
       map(token => {
         this.token = token;
         this.token.mobile = new JwtHelperService().decodeToken(token.token).user;
         this.token.name = new JwtHelperService().decodeToken(token.token).name;
         this.token.roles = new JwtHelperService().decodeToken(token.token).roles;
-        this.loginTime = new Date();
       }), catchError(error => {
         return this.handleError(error);
       })
     );
   }
 
-  logout(): Date {
+  logout() {
     this.token = undefined;
     this.router.navigate(['']);
-    const nowTime = new Date();
-    if (this.loginTime.getDate() === nowTime.getDate()) {
-      // console.log('same days...');
-      return null;
-    } else {
-      // console.log('differernt days...');
-      return this.loginTime;
-    }
   }
 
   getToken(): Token {
@@ -128,8 +116,8 @@ export class HttpService {
     return this;
   }
 
-  private authBasic(mobile: number, password: string): HttpService {
-    return this.header('Authorization', 'Basic ' + btoa(mobile + ':' + password));
+  private authBasic(email: string, password: string): HttpService {
+    return this.header('Authorization', 'Basic ' + btoa(email + ':' + password));
   }
 
   private resetOptions(): void {

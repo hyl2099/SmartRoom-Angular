@@ -7,20 +7,14 @@ import {PicturesService} from './pictures.service';
   templateUrl: './pictures.component.html',
   styleUrls: ['./pictures.component.css']
 })
-export class PicturesComponent implements OnInit {
+export class PicturesComponent {
   picture: Picture;
-  title = 'Staff Attendance';
+  title = 'Pictures';
   columns = ['id', 'owner', 'uploadTime', 'path', 'picture'];
   data: Picture[];
-  // cafe = '../../assets/images/cafe.jpg';
-  // ducha = '../../assets/images/ducha.jpg';
-  // cambia = '../../assets/images/cambia.jpg';
   constructor(private picturesService: PicturesService) {
     this.picture = {id: null, owner: '', uploadTime: null, path: ''};
     this.data = null;
-  }
-
-  ngOnInit() {
   }
 
   search() {

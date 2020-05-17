@@ -13,11 +13,11 @@ export class TokensService {
   constructor(private httpService: HttpService) {
   }
 
-  login(mobile: number, password: string): Observable<any> {
-    return this.httpService.login(mobile, password, TokensService.END_POINT);
+  login(email: string, password: string): Observable<any> {
+    return this.httpService.login(email, password, TokensService.END_POINT);
   }
 
-  logout(): Date {
+  logout() {
     return this.httpService.logout();
   }
 

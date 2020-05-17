@@ -2,13 +2,13 @@
   <mat-card-title>Search</mat-card-title>
   <mat-card-content>
     <mat-form-field>
-      <input [(ngModel)]="picture.id" matInput placeholder="Mobile:">
+      <input [(ngModel)]="picture.id" matInput placeholder="id:">
     </mat-form-field>
     <mat-form-field>
-      <input [(ngModel)]="picture.owner" matInput placeholder="Year:">
+      <input [(ngModel)]="picture.owner" matInput placeholder="owner:">
     </mat-form-field>
     <mat-form-field>
-      <input [(ngModel)]="picture.uploadTime" matInput placeholder="Month:">
+      <input [(ngModel)]="picture.uploadTime" matInput placeholder="uploadTime:">
     </mat-form-field>
     <button (click)="search()" color="primary" mat-mini-fab>
       <mat-icon>search</mat-icon>
@@ -19,4 +19,5 @@
   </mat-card-content>
 </mat-card>
 
-<app-crud [columns]="columns" [data]="data" [title]="title"></app-crud>
+<app-crud (create)="create()" (read)="read($event)" (update)="update($event)"
+  [columns]="columns" [data]="data" [deleteAction]="false" [title]="title"></app-crud>

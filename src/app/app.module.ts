@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { IndexcontentComponent } from './indexcontent/indexcontent.component';
 import { LoginComponent } from './login/login.component';
+import { LoginDialogComponent  } from './core/login-dialog.component';
+
 import { RegistroComponent } from './registro/registro.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
@@ -35,7 +37,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
-    CrudComponent
+    CrudComponent,
+    LoginDialogComponent
     // HiComponent
   ],
   imports: [
