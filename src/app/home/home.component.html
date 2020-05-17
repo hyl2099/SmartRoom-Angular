@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+  <img alt="miw" src="../../assets/img/miw.png"/>
+  <span>TPV </span>
+  <span class="backend"><small><small> Back-end: {{backend}}</small></small></span>
+  <span class="toolbar-spacer"></span>
+  <span>
+    <app-date></app-date>
+    <button (click)="logout()" mat-button>
+      <span>{{username}}</span>
+      <mat-icon>person</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button mat-button routerLink="/home/profile">
+      <mat-icon>account_box</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button [matMenuTriggerFor]="menu" mat-icon-button>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <button *ngIf="isAdmin()" [matMenuTriggerFor]="settings" mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    <span>Admin</span>
+  </button>
+  <button [matMenuTriggerFor]="picture" mat-menu-item>
+    <mat-icon>line_style</mat-icon>
+    <span>Products</span>
+  </button>
+  <button [matMenuTriggerFor]="users" mat-menu-item>
+    <mat-icon>people</mat-icon>
+    <span>Staff & Customers</span>
+  </button>
+  <button mat-menu-item routerLink="/home/vat-management">
+    <mat-icon>money</mat-icon>
+    <span>VAT Management</span>
+  </button>
+</mat-menu>
+
+
+<mat-menu #settings="matMenu">
+  <button (click)="deleteDb()" mat-menu-item>
+    <mat-icon>delete_sweep</mat-icon>
+    <span>Delete Database</span>
+  </button>
+  <button (click)="seedDb()" mat-menu-item>
+    <mat-icon>unarchive</mat-icon>
+    <span>Seed Database</span>
+  </button>
+</mat-menu>
+
+<mat-menu #users="matMenu">
+  <button mat-menu-item routerLink="/home/users">
+    <mat-icon>account_circle</mat-icon>
+    <span>Users</span>
+  </button>
+  <button *ngIf="!isOperator()" mat-menu-item routerLink="/home/users-roles">
+    <mat-icon>supervised_user_circle</mat-icon>
+    <span>Users Roles</span>
+  </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

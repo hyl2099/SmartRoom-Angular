@@ -32,7 +32,7 @@ export class HttpService {
     return this.authBasic(email, password).post(endPoint).pipe(
       map(token => {
         this.token = token;
-        this.token.mobile = new JwtHelperService().decodeToken(token.token).user;
+        this.token.email = new JwtHelperService().decodeToken(token.token).user;
         this.token.name = new JwtHelperService().decodeToken(token.token).name;
         this.token.roles = new JwtHelperService().decodeToken(token.token).roles;
       }), catchError(error => {

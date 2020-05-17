@@ -24,6 +24,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {WelcomeComponent} from './welcome.component';
+import {HomeComponent} from './home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {UsersCreationDialogComponent} from './home/users/users-creation-dialog.component';
+import {UsersDetailDialogComponent} from './home/users/users-detail-dialog.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {CoreModule} from './core/core.module';
+import {UsersComponent} from './home/users/users.component';
 // import { HiComponent } from './hi/hi.component';
 
 @NgModule({
@@ -38,7 +46,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     PicturesComponent,
     PictureCreateUpdateComponent,
     CrudComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    HomeComponent,
+    WelcomeComponent,
+    UsersCreationDialogComponent,
+    UsersDetailDialogComponent,
+    UsersComponent
     // HiComponent
   ],
   imports: [
@@ -58,7 +71,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     MatTableModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule,
+    MatToolbarModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
