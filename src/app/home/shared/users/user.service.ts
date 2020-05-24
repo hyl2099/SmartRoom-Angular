@@ -29,11 +29,9 @@ export class UserService {
     return this.httpService.get(AppEndpoints.USERS);
   }
 
-  search(email: string, username: string, dni: string, address: string): Observable<User[]> {
+  search(email: string, username: string): Observable<User[]> {
     this.httpService.param('email', email ? email : '');
     this.httpService.param('username', username ? username : '');
-    this.httpService.param('dni', dni ? dni : '');
-    this.httpService.param('address', address ? address : '');
     return this.httpService.get(AppEndpoints.USERS + '/' + 'search');
   }
 

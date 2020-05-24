@@ -4,6 +4,6 @@ export class AppEndpoints {
 
   static SYSTEM_APP_INFO = '/system/app-info';
 
-  static USERS = '/users';
+  static USERS = '/users/all';
   static USER_PASSWORD = '/users/password';
 }

@@ -26,22 +26,19 @@ export class UsersComponent {
   }
 
   search() {
-    if (this.user.email == null && this.user.username == null && this.user.dni == null && this.user.address == null) {
+    if (this.user.email == null && this.user.username == null ) {
       this.userService.readAll().subscribe(
         data => this.data = data
       );
     } else {
-      this.userService.search(this.user.email, this.user.username, this.user.dni, this.user.address).subscribe(
+      this.userService.search(this.user.email, this.user.username).subscribe(
         data => {
           if (!this.onlyCustomer) {
             this.data = data;
           } else {
             this.data = [];
             data.forEach(user => {
-              const customer = user.roles.findIndex(rol => rol === 'CUSTOMER');
-              if (customer !== -1) {
                 this.data.push(user);
-              }
             });
             if (this.data.length === 0) {
               this.message.open('Users not found', null, {

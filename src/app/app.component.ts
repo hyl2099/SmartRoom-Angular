@@ -14,6 +14,6 @@ export class AppComponent {
 
   constructor() {
     this.apiEndPoint = environment.API;
-    this.profile = environment.production ? 'Prod' : 'Dev';
+    // this.profile = environment.production ? 'Prod' : 'Dev';
   }
 }

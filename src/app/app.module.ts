@@ -33,7 +33,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {CoreModule} from './core/core.module';
 import {UsersComponent} from './home/users/users.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-// import { HiComponent } from './hi/hi.component';
+import {AppServices} from './app-services';
+import {AppMaterialModule} from './app-material.module';
+import {CdkTableModule} from '@angular/cdk/table';
+import {AppComponents} from './app-components';
 
 @NgModule({
   declarations: [
@@ -46,14 +49,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
-    // CrudComponent,
-    // LoginDialogComponent,
     HomeComponent,
     WelcomeComponent,
     UsersCreationDialogComponent,
     UsersDetailDialogComponent,
-    UsersComponent
-    // HiComponent
+    UsersComponent,
+    AppComponent,
+    AppComponents.COMPONENTS,
+    AppComponents.DIALOGS
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     BrowserModule,
@@ -76,9 +78,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatMenuModule,
     MatToolbarModule,
     CoreModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AppMaterialModule,
+    CdkTableModule
   ],
-  providers: [],
+  entryComponents: [
+    AppComponents.DIALOGS
+  ],
+  providers: [AppServices.SERVICES],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

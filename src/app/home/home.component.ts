@@ -27,28 +27,29 @@ export class HomeComponent {
               private pictureService: PicturesService,
               private tokensService: TokensService, private userService: UserService,
               private adminsService: AdminsService, private systemService: SystemService) {
-    systemService.readVersion().subscribe(
-      appInfo => this.backend = appInfo.version + '(' + appInfo.profile + ')'
-    );
+    // systemService.readVersion().subscribe(
+    //   appInfo => this.backend = appInfo.version + '(' + appInfo.profile + ')'
+    // );
     this.username = tokensService.getName();
     this.email = tokensService.getEmail().toString();
   }
 
-  deleteDb() {
-    this.dialog.open(CancelYesDialogComponent).afterClosed().subscribe(
-      result => {
-        if (result) {
-          this.adminsService.deleteDb();
-        }
-      });
-  }
-
-  seedDb() {
-    this.adminsService.seedDb();
-  }
+  // deleteDb() {
+  //   this.dialog.open(CancelYesDialogComponent).afterClosed().subscribe(
+  //     result => {
+  //       if (result) {
+  //         this.adminsService.deleteDb();
+  //       }
+  //     });
+  // }
+  //
+  // seedDb() {
+  //   this.adminsService.seedDb();
+  // }
 
   logout() {
     this.tokensService.logout();
   }
+
 
 }

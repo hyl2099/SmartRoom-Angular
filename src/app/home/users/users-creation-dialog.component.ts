@@ -15,9 +15,7 @@ export class UsersCreationDialogComponent {
   user: User = {
     mobile: null,
     username: null,
-    email: null,
-    dni: null,
-    address: null
+    email: null
   };
   update: boolean;
   email: string;
@@ -36,7 +34,6 @@ export class UsersCreationDialogComponent {
       this.userService.read(data.email).subscribe(
         user => {
           this.user = user;
-          this.active = this.user.active.toString();
         }
       );
     }

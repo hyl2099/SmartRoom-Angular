@@ -1,56 +1,57 @@
 <mat-toolbar color="primary">
-<!--  <img alt="miw" src="../../assets/img/miw.png"/>-->
-  <span>TPV </span>
-  <span class="backend"><small><small> Back-end: {{backend}}</small></small></span>
+<!--  <img alt="miw" src="../../assets/img/nuevo.png"/>-->
+  <span>Ready </span>
+<!--  <span class="backend"><small><small> Back-end: {{backend}}</small></small></span>-->
   <span class="toolbar-spacer"></span>
   <span>
     <app-date></app-date>
     <button (click)="logout()" mat-button>
       <span>{{username}}</span>
-      <mat-icon>person</mat-icon>
+<!--      <mat-icon>person</mat-icon>-->
       <span>Logout</span>
     </button>
-    <button mat-button routerLink="/home/profile">
-      <mat-icon>account_box</mat-icon>
-      <span>Profile</span>
-    </button>
+<!--    <button mat-button routerLink="/home/profile">-->
+<!--&lt;!&ndash;      <mat-icon>account_box</mat-icon>&ndash;&gt;-->
+<!--      <span>Profile</span>-->
+<!--    </button>-->
     <button [matMenuTriggerFor]="menu" mat-icon-button>
-      <mat-icon>more_vert</mat-icon>
+      <mat-icon>Menu</mat-icon>
     </button>
   </span>
 </mat-toolbar>
 
+
+
 <mat-menu #menu="matMenu" xPosition="before">
-  <button [matMenuTriggerFor]="picture" mat-menu-item>
-    <mat-icon>line_style</mat-icon>
-    <span>Products</span>
-  </button>
   <button [matMenuTriggerFor]="users" mat-menu-item>
     <mat-icon>people</mat-icon>
-    <span>Staff & Customers</span>
+    <span>Users</span>
   </button>
-  <button mat-menu-item routerLink="/home/vat-management">
-    <mat-icon>money</mat-icon>
-    <span>VAT Management</span>
+  <button [matMenuTriggerFor]="medias" mat-menu-item>
+    <mat-icon>people</mat-icon>
+    <span>Pictures & Videos</span>
   </button>
 </mat-menu>
 
-
-<mat-menu #settings="matMenu">
-  <button (click)="deleteDb()" mat-menu-item>
-    <mat-icon>delete_sweep</mat-icon>
-    <span>Delete Database</span>
-  </button>
-  <button (click)="seedDb()" mat-menu-item>
-    <mat-icon>unarchive</mat-icon>
-    <span>Seed Database</span>
-  </button>
-</mat-menu>
 
 <mat-menu #users="matMenu">
   <button mat-menu-item routerLink="/home/users">
     <mat-icon>account_circle</mat-icon>
     <span>Users</span>
+  </button>
+</mat-menu>
+<mat-menu #medias="matMenu">
+  <button mat-menu-item routerLink="/home/pictures">
+    <mat-icon>account_circle</mat-icon>
+    <span>pictures</span>
+  </button>
+  <button mat-menu-item routerLink="/home/videos">
+    <mat-icon>account_circle</mat-icon>
+    <span>videos</span>
+  </button>
+  <button mat-menu-item routerLink="/home/doorbells">
+    <mat-icon>account_circle</mat-icon>
+    <span>doorbells</span>
   </button>
 </mat-menu>
 

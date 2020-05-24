@@ -14,8 +14,6 @@ export class UsersDetailDialogComponent {
     mobile: null,
     username: null,
     email: null,
-    dni: null,
-    address: null,
     active: null
   };
 
