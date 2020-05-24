@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
 import {HttpService} from './http.service';
-import {Role} from './role.model';
 
 
 @Injectable()
@@ -19,18 +18,6 @@ export class TokensService {
 
   logout() {
     return this.httpService.logout();
-  }
-
-  isAdmin(): boolean {
-    return this.httpService.getToken() ? this.httpService.getToken().roles.includes(Role.ADMIN) : false;
-  }
-
-  isManager(): boolean {
-    return this.httpService.getToken() ? this.httpService.getToken().roles.includes(Role.MANAGER) : false;
-  }
-
-  isOperator(): boolean {
-    return this.httpService.getToken() ? this.httpService.getToken().roles.includes(Role.OPERATOR) : false;
   }
 
   getEmail(): string {

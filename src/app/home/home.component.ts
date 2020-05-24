@@ -34,19 +34,6 @@ export class HomeComponent {
     this.email = tokensService.getEmail().toString();
   }
 
-  isAdmin(): boolean {
-    return this.tokensService.isAdmin();
-  }
-
-  isManager(): boolean {
-    return this.tokensService.isManager();
-  }
-
-  isOperator(): boolean {
-    return this.tokensService.isOperator();
-  }
-
-
   deleteDb() {
     this.dialog.open(CancelYesDialogComponent).afterClosed().subscribe(
       result => {

@@ -32,6 +32,7 @@ import {UsersDetailDialogComponent} from './home/users/users-detail-dialog.compo
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {CoreModule} from './core/core.module';
 import {UsersComponent} from './home/users/users.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 // import { HiComponent } from './hi/hi.component';
 
 @NgModule({
@@ -45,8 +46,8 @@ import {UsersComponent} from './home/users/users.component';
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
-    CrudComponent,
-    LoginDialogComponent,
+    // CrudComponent,
+    // LoginDialogComponent,
     HomeComponent,
     WelcomeComponent,
     UsersCreationDialogComponent,
@@ -74,7 +75,8 @@ import {UsersComponent} from './home/users/users.component';
     MatDialogModule,
     MatMenuModule,
     MatToolbarModule,
-    CoreModule
+    CoreModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

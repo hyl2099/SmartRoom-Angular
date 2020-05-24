@@ -10,6 +10,7 @@ import {Token} from './token.model';
 import {Error} from './error.model';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
+
 @Injectable()
 export class HttpService {
   static API_END_POINT = environment.API;
@@ -34,7 +35,6 @@ export class HttpService {
         this.token = token;
         this.token.email = new JwtHelperService().decodeToken(token.token).user;
         this.token.name = new JwtHelperService().decodeToken(token.token).name;
-        this.token.roles = new JwtHelperService().decodeToken(token.token).roles;
       }), catchError(error => {
         return this.handleError(error);
       })
