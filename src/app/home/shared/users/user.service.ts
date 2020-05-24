@@ -32,7 +32,7 @@ export class UserService {
   search(email: string, username: string): Observable<User[]> {
     this.httpService.param('email', email ? email : '');
     this.httpService.param('username', username ? username : '');
-    return this.httpService.get(AppEndpoints.USERS + '/' + 'search');
+    return this.httpService.get(AppEndpoints.USERS);
   }
 
   updatePassword(email: string, newPassword: string): Observable<User> {

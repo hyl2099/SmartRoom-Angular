@@ -6,9 +6,9 @@ import {CancelYesDialogComponent} from '../core/cancel-yes-dialog.component';
 import {AdminsService} from './admins.service';
 import {UserService} from './shared/users/user.service';
 import {SystemService} from './system.service';
-import {Picture} from '../pictures/pictures.model';
+import {Picture} from './pictures/pictures.model';
 import {MatDialog} from '@angular/material/dialog';
-import {PicturesService} from '../pictures/pictures.service';
+import {PicturesService} from './pictures/pictures.service';
 
 @Component({
   templateUrl: 'home.component.html',

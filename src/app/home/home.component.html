@@ -20,39 +20,54 @@
   </span>
 </mat-toolbar>
 
-
-
-<mat-menu #menu="matMenu" xPosition="before">
-  <button [matMenuTriggerFor]="users" mat-menu-item>
-    <mat-icon>people</mat-icon>
-    <span>Users</span>
-  </button>
-  <button [matMenuTriggerFor]="medias" mat-menu-item>
-    <mat-icon>people</mat-icon>
-    <span>Pictures & Videos</span>
-  </button>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item routerLink="/home/users">
+      <span>Users</span>
+    </button>
+    <button mat-menu-item routerLink="/home/pictures">
+        <span>pictures</span>
+    </button>
+    <button mat-menu-item routerLink="/home/videos">
+      <span>videos</span>
+    </button>
+    <button mat-menu-item routerLink="/home/doorbells">
+      <span>doorbells</span>
+    </button>
 </mat-menu>
 
 
-<mat-menu #users="matMenu">
-  <button mat-menu-item routerLink="/home/users">
-    <mat-icon>account_circle</mat-icon>
-    <span>Users</span>
-  </button>
-</mat-menu>
-<mat-menu #medias="matMenu">
-  <button mat-menu-item routerLink="/home/pictures">
-    <mat-icon>account_circle</mat-icon>
-    <span>pictures</span>
-  </button>
-  <button mat-menu-item routerLink="/home/videos">
-    <mat-icon>account_circle</mat-icon>
-    <span>videos</span>
-  </button>
-  <button mat-menu-item routerLink="/home/doorbells">
-    <mat-icon>account_circle</mat-icon>
-    <span>doorbells</span>
-  </button>
-</mat-menu>
+
+<!--<mat-menu #menu="matMenu" xPosition="before">-->
+<!--  <button [matMenuTriggerFor]="users" mat-menu-item>-->
+<!--    <mat-icon>people</mat-icon>-->
+<!--    <span>Users</span>-->
+<!--  </button>-->
+<!--  <button [matMenuTriggerFor]="medias" mat-menu-item>-->
+<!--    <mat-icon>people</mat-icon>-->
+<!--    <span>Pictures & Videos</span>-->
+<!--  </button>-->
+<!--</mat-menu>-->
+
+
+<!--<mat-menu #users="matMenu">-->
+<!--  <button mat-menu-item routerLink="/home/users">-->
+<!--    <mat-icon>account_circle</mat-icon>-->
+<!--    <span>Users</span>-->
+<!--  </button>-->
+<!--</mat-menu>-->
+<!--<mat-menu #medias="matMenu">-->
+<!--  <button mat-menu-item routerLink="/home/pictures">-->
+<!--    <mat-icon>account_circle</mat-icon>-->
+<!--    <span>pictures</span>-->
+<!--  </button>-->
+<!--  <button mat-menu-item routerLink="/home/videos">-->
+<!--    <mat-icon>account_circle</mat-icon>-->
+<!--    <span>videos</span>-->
+<!--  </button>-->
+<!--  <button mat-menu-item routerLink="/home/doorbells">-->
+<!--    <mat-icon>account_circle</mat-icon>-->
+<!--    <span>doorbells</span>-->
+<!--  </button>-->
+<!--</mat-menu>-->
 
 <router-outlet></router-outlet>

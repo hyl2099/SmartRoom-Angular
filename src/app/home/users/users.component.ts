@@ -9,12 +9,11 @@ import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
-  templateUrl: `users.component.html`
+  templateUrl: 'users.component.html'
 })
 export class UsersComponent {
 
   user: User;
-  onlyCustomer = true;
 
   title = 'Users management';
   columns = ['email', 'username'];
@@ -33,9 +32,6 @@ export class UsersComponent {
     } else {
       this.userService.search(this.user.email, this.user.username).subscribe(
         data => {
-          if (!this.onlyCustomer) {
-            this.data = data;
-          } else {
             this.data = [];
             data.forEach(user => {
                 this.data.push(user);
@@ -45,7 +41,6 @@ export class UsersComponent {
                 duration: 2500,
               });
             }
-          }
         }
       );
     }
@@ -54,7 +49,6 @@ export class UsersComponent {
   resetSearch() {
     this.user = {email: null, username: null};
   }
-
 
   create() {
     this.dialog.open(UsersCreationDialogComponent, {

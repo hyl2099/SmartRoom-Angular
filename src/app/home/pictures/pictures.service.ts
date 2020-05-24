@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Picture} from './pictures.model';
-import {HttpService} from '../core/http.service';
-import {AppEndpoints} from '../app-endpoints';
+import {HttpService} from '../../core/http.service';
+import {AppEndpoints} from '../../app-endpoints';
 
 @Injectable({
   providedIn: 'root'
