@@ -13,6 +13,7 @@ export class TokensService {
   }
 
   login(email: string, password: string): Observable<any> {
+    console.log('HttpService log in');
     return this.httpService.login(email, password, TokensService.END_POINT);
   }
 

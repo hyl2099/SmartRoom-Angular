@@ -35,6 +35,8 @@ export class HttpService {
         this.token = token;
         this.token.email = new JwtHelperService().decodeToken(token.token).user;
         this.token.name = new JwtHelperService().decodeToken(token.token).name;
+        console.log(this.token.email);
+        console.log(this.token.name);
       }), catchError(error => {
         return this.handleError(error);
       })
