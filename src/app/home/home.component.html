@@ -1,39 +1,49 @@
-<mat-toolbar color="primary">
-<!--  <img alt="miw" src="../../assets/img/nuevo.png"/>-->
-  <span>Ready </span>
-<!--  <span class="backend"><small><small> Back-end: {{backend}}</small></small></span>-->
+<mat-toolbar>
+  <button mat-button [matMenuTriggerFor]="menu"
+          #matMenuTrigger="matMenuTrigger"
+          (mouseenter)="matMenuTrigger.openMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="backend"><small><small>Welcome to SmartRoom</small></small></span>
   <span class="toolbar-spacer"></span>
   <span>
     <app-date></app-date>
+    <span>{{username}}</span>
     <button (click)="logout()" mat-button>
-      <span>{{username}}</span>
-<!--      <mat-icon>person</mat-icon>-->
+      <mat-icon>person</mat-icon>
       <span>Logout</span>
     </button>
-<!--    <button mat-button routerLink="/home/profile">-->
-<!--&lt;!&ndash;      <mat-icon>account_box</mat-icon>&ndash;&gt;-->
-<!--      <span>Profile</span>-->
-<!--    </button>-->
-    <button [matMenuTriggerFor]="menu" mat-icon-button>
-      <mat-icon>Menu</mat-icon>
+    <button mat-button routerLink="/home/profile">
+      <mat-icon>account_box</mat-icon>
+      <span>Profile</span>
     </button>
+<!--  <img alt="miw" src="../../assets/images/nuevo.png" style="height: 64px; width: auto"/>-->
   </span>
 </mat-toolbar>
 
-<mat-menu #menu="matMenu" [overlapTrigger]="false">
+
+
+<mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
+  <div (mouseleave)="matMenuTrigger.closeMenu()">
     <button mat-menu-item routerLink="/home/users">
+      <mat-icon>people</mat-icon>
       <span>Users</span>
     </button>
     <button mat-menu-item routerLink="/home/pictures">
-        <span>pictures</span>
+      <mat-icon>photo_library</mat-icon>
+      <span>pictures</span>
     </button>
     <button mat-menu-item routerLink="/home/videos">
+      <mat-icon>movie_creation</mat-icon>
       <span>videos</span>
     </button>
     <button mat-menu-item routerLink="/home/doorbells">
+      <mat-icon>notifications</mat-icon>
       <span>doorbells</span>
     </button>
+  </div>
 </mat-menu>
+
 
 
 
