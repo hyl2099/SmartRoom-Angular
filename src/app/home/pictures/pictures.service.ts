@@ -13,11 +13,7 @@ export class PicturesService {
   }
 
   readAll(): Observable<Picture[]> {
-    this.httpService.param('id', null);
-    this.httpService.param('owner', '');
-    this.httpService.param('uploadTime', '');
-    this.httpService.param('path', '');
-    return this.httpService.get(AppEndpoints.PICTURES);
+    return this.httpService.get(AppEndpoints.PICTURES_ALL);
   }
 
   search(id: string, owner: string, uploadTime: string, path: string): Observable<Picture[]> {

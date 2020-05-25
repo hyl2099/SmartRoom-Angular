@@ -18,7 +18,7 @@ export class PicturesComponent {
   }
 
   search() {
-    if (this.picture.owner === null || this.picture.uploadTime === null || this.picture.path === null) {
+    if (this.picture.owner === '' ) {
       this.picturesService.readAll();
     } else {
       this.picturesService.readAll();
