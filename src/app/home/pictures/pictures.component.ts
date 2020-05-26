@@ -3,7 +3,6 @@ import {Picture} from './pictures.model';
 import {PicturesService} from './pictures.service';
 
 @Component({
-  selector: 'app-pictures',
   templateUrl: './pictures.component.html',
   styleUrls: ['./pictures.component.css']
 })
@@ -19,9 +18,9 @@ export class PicturesComponent {
 
   search() {
     if (this.picture.owner === '' ) {
-      this.picturesService.readAll();
+      this.picturesService.readAll().subscribe(data => this.data = data);
     } else {
-      this.picturesService.readAll();
+      this.picturesService.readAll().subscribe(data => this.data = data);
     }
 
   }

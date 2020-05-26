@@ -4,9 +4,7 @@ import {Picture} from './pictures.model';
 import {HttpService} from '../../core/http.service';
 import {AppEndpoints} from '../../app-endpoints';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PicturesService {
 
   constructor(private httpService: HttpService) {

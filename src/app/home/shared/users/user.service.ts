@@ -26,7 +26,7 @@ export class UserService {
   }
 
   readAll(): Observable<User[]> {
-    return this.httpService.get(AppEndpoints.USERS);
+    return this.httpService.get(AppEndpoints.USERS_ALL);
   }
 
   search(email: string, username: string): Observable<User[]> {
