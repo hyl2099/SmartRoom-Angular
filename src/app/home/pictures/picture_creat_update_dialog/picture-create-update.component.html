@@ -3,11 +3,25 @@
 <mat-dialog-content>
   <mat-form-field>
     <input [(ngModel)]="picture.owner" matInput
-           placeholder="Mobile" type="number"/>
+           placeholder="Owner" type="number"/>
   </mat-form-field>
   <mat-form-field>
-    <input [(ngModel)]="picture.path" matInput
-           placeholder="path"/>
+<!--    <input [(ngModel)]="picture.path" matInput-->
+<!--           placeholder="Path"/>-->
+    <script type="text/javascript" src="../../js/ng-file-upload.js"></script>
+    <script type="text/javascript" src="../../js/ng-file-upload-shim.min.js"></script>
+
+<!--    <div class="upload-button" type="file" capture="camera" ngf-select="uploadFiles($file,$errorfile)"-->
+<!--         ng-model="data.file" accept="image/jpeg,image/gif,image/png" ngf-max-height="1000" ngf-max-size="1MB">-->
+<!--      <img class="uploadpic img-rounded" src="{{imgSrc}}" ng-model="product.img"/>-->
+<!--      <div class="glyphicon glyphicon-camera uploadpic-label">点击上传照片</div>-->
+<!--    </div>-->
+    <div class="form-group">
+      <label >照片</label><br/>
+      <img height="100px" width="200px"src="{{imgSrc}}"/><br/>
+      <br/>
+      <input type="file" name="photo" id="photo" (change)="fileChange($event)"/>
+    </div>
   </mat-form-field>
   <mat-form-field *ngIf="update">
     <mat-label>Active</mat-label>

@@ -3,4 +3,5 @@ export interface Picture {
   owner: string;
   uploadTime: Date;
   path: string;
+  photo: File;
 }

@@ -14,7 +14,7 @@ export class PicturesComponent {
   columns = ['id', 'owner', 'uploadTime', 'path', 'picture'];
   data: Picture[];
   constructor(private dialog: MatDialog, private picturesService: PicturesService) {
-    this.picture = {id: null, owner: '', uploadTime: null, path: ''};
+    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null};
     this.data = null;
   }
 
@@ -32,7 +32,7 @@ export class PicturesComponent {
   }
 
   resetSearch() {
-    this.picture = {id: null, owner: '', uploadTime: null, path: ''};
+    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null};
   }
 
   create() {
