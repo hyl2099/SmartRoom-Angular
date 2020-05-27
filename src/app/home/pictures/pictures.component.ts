@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Picture} from './pictures.model';
 import {PicturesService} from './pictures.service';
+import {PictureCreateUpdateComponent} from './picture_creat_update_dialog/picture-create-update.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   templateUrl: './pictures.component.html',
@@ -11,9 +13,13 @@ export class PicturesComponent {
   title = 'Pictures';
   columns = ['id', 'owner', 'uploadTime', 'path', 'picture'];
   data: Picture[];
-  constructor(private picturesService: PicturesService) {
+  constructor(private dialog: MatDialog, private picturesService: PicturesService) {
     this.picture = {id: null, owner: '', uploadTime: null, path: ''};
     this.data = null;
+  }
+
+  readAll(){
+    this.picturesService.readAll().subscribe(data => this.data = data);
   }
 
   search() {
@@ -30,8 +36,19 @@ export class PicturesComponent {
   }
 
   create() {
-    // TODO
-
+    this.dialog.open(PictureCreateUpdateComponent, {
+      // width: '60%',
+      // height: '90%',
+      data: {
+        // dialogMode: 'create',
+        // picture: {}
+        update:false
+      }
+    }).afterClosed().subscribe(result => {
+      if (result) {
+        this.readAll();
+      }
+    });
   }
 
   read(picture: Picture) {

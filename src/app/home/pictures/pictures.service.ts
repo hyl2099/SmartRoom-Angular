@@ -22,8 +22,9 @@ export class PicturesService {
     return this.httpService.get(AppEndpoints.PICTURES);
   }
 
-  create(newLoginRecord: Picture): Observable<Picture> {
-    return this.httpService.post(AppEndpoints.PICTURES, newLoginRecord);
+
+  create(picture: Picture): Observable<Picture> {
+    return this.httpService.post(AppEndpoints.PICTURES_SAVE, picture);
   }
 
   update(newPicture: Picture): Observable<Picture> {
