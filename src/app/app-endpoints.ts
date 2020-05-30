@@ -3,6 +3,7 @@ export class AppEndpoints {
   static PICTURES = '/pictures';
   static PICTURES_ALL = '/pictures/all';
   static PICTURES_SAVE = '/pictures/save';
+  static PICTURES_ADD_FILE = '/pictures/addfile';
 
   static SYSTEM_APP_INFO = '/system/app-info';
 

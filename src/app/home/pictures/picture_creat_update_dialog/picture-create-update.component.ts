@@ -13,51 +13,79 @@ import {ListService} from './list.service';
 })
 export class PictureCreateUpdateComponent {
 
-  picture: Picture = {
-    id:null,
-    owner: null,
-    uploadTime: null,
-    path: null,
-    photo: null
-  };
-
-  imgSrc = '../../../assets/images/nuevo.png';
-  imgsrc = 'http://localhost:8888/images/nuevo.jpg';
-  file:any;
-  update: boolean;
-  active: string;
-
-  constructor(@Inject(MAT_DIALOG_DATA) data: any,
-              private dialog: MatDialog,
-              private message: MatSnackBar,
-              private picturesService: PicturesService,
-              public _d: DomSanitizer,
-              private listservice:ListService) {
-    this.update = data.update;
-  }
-
-  // 低级的savePicture post方法
-  // createPicture() {
-  //   this.picturesService.create(this.picture).subscribe(
-  //     //执行成功以后通过路由进行组件跳转
+  // picture: Picture = {
+  //   id:null,
+  //   owner: null,
+  //   uploadTime: null,
+  //   path: null,
+  //   photo: null
+  // };
+  //
+  // imgSrc = '../../../assets/images/nuevo.png';
+  // imgsrc = 'http://localhost:8080/images/nuevo.jpg';
+  // file:any;
+  // update: boolean;
+  // active: string;
+  //
+  // constructor(@Inject(MAT_DIALOG_DATA) data: any,
+  //             private dialog: MatDialog,
+  //             private message: MatSnackBar,
+  //             private picturesService: PicturesService,
+  //             public _d: DomSanitizer,
+  //             private listservice:ListService) {
+  //   this.update = data.update;
+  // }
+  //
+  // // 低级的savePicture post方法
+  // // createPicture() {
+  // //   this.picturesService.create(this.picture).subscribe(
+  // //     //执行成功以后通过路由进行组件跳转
+  // //     () => this.dialog.closeAll()
+  // //     , () => this.message.open('User created successfully', null, {
+  // //       duration: 2000,
+  // //     })
+  // //   );
+  // // }
+  //
+  // // 可以传送图片file的 post方法
+  // onSubmit(){
+  //   this.listservice.onSubmit(this.picture).subscribe(
+  //     // 执行成功以后进行组件跳转
   //     () => this.dialog.closeAll()
   //     , () => this.message.open('User created successfully', null, {
   //       duration: 2000,
   //     })
   //   );
   // }
+  //
+  // // 上传文件的input框的监听事件
+  // fileChange(e) {
+  //   this.file = e.srcElement.files[0]; // 获取图片这里只操作一张图片
+  //   this.imgsrc = window.URL.createObjectURL(this.file); // 获取上传的图片临时路径
+  // }
 
-  // 可以传送图片file的 post方法
-  createPicture(){
-    this.listservice.onSubmit(this.picture).subscribe(
-      // 执行成功以后进行组件跳转
-      () => this.dialog.closeAll()
-      , () => this.message.open('User created successfully', null, {
-        duration: 2000,
-      })
-    );
+  // **声明表单变量 */
+  from:{
+    name:string,
+    photo:File
   }
-
+  // **设置的图片框默认显示一张图片*/
+  imgSrc = '../../../assets/images/nuevo.png';
+  date:string;
+  file:any;
+  formdate:FormData;
+  constructor(
+    private listservice:ListService,
+    public _d: DomSanitizer
+  ) {  }
+  onSubmit(value):void{
+    this.formdate=new FormData();
+    this.formdate.append('owner',value.name)
+    this.formdate.append('file',this.file)
+    this.listservice.onSubmit(this.formdate).subscribe(
+      // 执行成功以后通过路由进行组件跳转
+  );
+  }
   // 上传文件的input框的监听事件
   fileChange(e) {
     this.file = e.srcElement.files[0]; // 获取图片这里只操作一张图片
