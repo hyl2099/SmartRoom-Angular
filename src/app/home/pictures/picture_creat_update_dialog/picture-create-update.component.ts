@@ -89,6 +89,6 @@ export class PictureCreateUpdateComponent {
   // 上传文件的input框的监听事件
   fileChange(e) {
     this.file = e.srcElement.files[0]; // 获取图片这里只操作一张图片
-    this.imgsrc = window.URL.createObjectURL(this.file); // 获取上传的图片临时路径
+    this.imgSrc = window.URL.createObjectURL(this.file); // 获取上传的图片临时路径
   }
 }
