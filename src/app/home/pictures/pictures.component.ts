@@ -3,6 +3,7 @@ import {Picture} from './pictures.model';
 import {PicturesService} from './pictures.service';
 import {PictureCreateUpdateComponent} from './picture_creat_update_dialog/picture-create-update.component';
 import {MatDialog} from '@angular/material/dialog';
+import {PicturesDetailDialogComponent} from './picture_detail/pictures-detail-dialog.component';
 
 @Component({
   templateUrl: './pictures.component.html',
@@ -11,15 +12,18 @@ import {MatDialog} from '@angular/material/dialog';
 export class PicturesComponent {
   picture: Picture;
   title = 'Pictures';
-  columns = ['id', 'owner', 'uploadTime', 'path', 'picture'];
+  columns = ['id', 'owner', 'uploadTime', 'picture','remark'];
   data: Picture[];
   constructor(private dialog: MatDialog, private picturesService: PicturesService) {
-    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null};
+    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null,remark:''};
     this.data = null;
   }
 
   readAll(){
-    this.picturesService.readAll().subscribe(data => this.data = data);
+    this.picturesService.readAll().subscribe(
+      data => {this.data = data;
+        }
+    );
   }
 
   search() {
@@ -32,7 +36,7 @@ export class PicturesComponent {
   }
 
   resetSearch() {
-    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null};
+    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null, remark:''};
   }
 
   create() {
@@ -52,7 +56,14 @@ export class PicturesComponent {
   }
 
   read(picture: Picture) {
-    // TODO
+    this.dialog.open(PicturesDetailDialogComponent,
+      {
+        // width: '400px',
+        data: {
+          id: picture.id
+        }
+      }
+    );
   }
 
   update(picture: Picture) {

@@ -21,6 +21,10 @@ export class HttpService {
   private token: Token;
   private headers: HttpHeaders;
   private params: HttpParams;
+  // responseType值的类型可为如下 arraybuffer	ArrayBuffer对象
+  // blob	Blob对象
+  // document	Document对象
+  // json	JavaScript object, parsed from a JSON string returned by the server
   private responseType: string;
   private successfulNotification = undefined;
 
@@ -57,15 +61,20 @@ export class HttpService {
     return this;
   }
 
+
   successful(notification = 'Successful'): HttpService {
     this.successfulNotification = notification;
     return this;
   }
 
-  pdf(): HttpService {
+  photo(): HttpService {
     this.responseType = 'blob';
     this.header('Accept', 'application/pdf , application/json');
     return this;
+  }
+
+  getImages():Observable<any>{
+    return this.http.get('http://localhost:8080/getImages');
   }
 
   post(endpoint: string, body?: object): Observable<any> {
@@ -151,8 +160,8 @@ export class HttpService {
     }
     const contentType = response.headers.get('content-type');
     if (contentType) {
-      if (contentType.indexOf('application/pdf') !== -1) {
-        const blob = new Blob([response.body], {type: 'application/pdf'});
+      if (contentType.indexOf('application/images') !== -1) {
+        const blob = new Blob([response.body], {type: 'application/images'});
         window.open(window.URL.createObjectURL(blob));
       } else if (contentType.indexOf('application/json') !== -1) {
         return response.body; // with 'text': JSON.parse(response.body);

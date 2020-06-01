@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders }    from '@angular/common/http';
 import {AppEndpoints} from '../../../app-endpoints';
+import {Picture} from '../pictures.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListService {
   file = new FormData();
+  picture: Picture;
   constructor(public http:HttpClient) { }
 
   // 将我们的参数以及上传的文件提交给服务器

@@ -4,4 +4,5 @@ export interface Picture {
   uploadTime: Date;
   path: string;
   photo: File;
+  remark: string;
 }

@@ -37,6 +37,8 @@ import {AppServices} from './app-services';
 import {AppMaterialModule} from './app-material.module';
 import {CdkTableModule} from '@angular/cdk/table';
 import {AppComponents} from './app-components';
+import {PicturesDetailDialogComponent} from './home/pictures/picture_detail/pictures-detail-dialog.component';
+import {VideosComponent} from './home/videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import {AppComponents} from './app-components';
     IndexcontentComponent,
     LoginComponent,
     PicturesComponent,
+    VideosComponent,
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
@@ -54,6 +57,7 @@ import {AppComponents} from './app-components';
     UsersCreationDialogComponent,
     UsersDetailDialogComponent,
     UsersComponent,
+    PicturesDetailDialogComponent,
     AppComponent,
     AppComponents.COMPONENTS,
     AppComponents.DIALOGS
