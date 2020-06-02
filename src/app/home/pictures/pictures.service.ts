@@ -24,7 +24,7 @@ export class PicturesService {
     return this.httpService.get(AppEndpoints.PICTURES);
   }
 
-  searchPhoto(id: string): Observable<Picture>{
+  searchPhoto(id: number): Observable<Picture>{
     // 带参数用这个，相当于/picturesphoto?id=4
     // this.httpService.param('id', picture.id.toString());
     // 但后端没有参数，需要/picturesphoto/4

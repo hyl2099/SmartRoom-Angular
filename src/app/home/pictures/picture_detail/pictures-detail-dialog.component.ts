@@ -16,6 +16,7 @@ export class PicturesDetailDialogComponent {
     uploadTime: null,
     path: null,
     photo: null,
+    image:null,
     remark:null
   };
   color = 'warn';

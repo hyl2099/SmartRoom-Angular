@@ -3,6 +3,7 @@ export interface Picture {
   owner: string;
   uploadTime: Date;
   path: string;
-  photo: File;
+  photo: any;
+  image:any;
   remark: string;
 }

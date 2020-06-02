@@ -4,20 +4,28 @@
 <!--    <mat-form-field>-->
 <!--      <input [(ngModel)]="picture.id" matInput placeholder="id:">-->
 <!--    </mat-form-field>-->
-    <mat-form-field>
-      <input [(ngModel)]="picture.owner" matInput placeholder="owner:">
-    </mat-form-field>
+<!--    <mat-form-field>-->
+<!--      <input [(ngModel)]="picture.owner" matInput placeholder="owner:">-->
+<!--    </mat-form-field>-->
 <!--    <mat-form-field>-->
 <!--      <input [(ngModel)]="picture.uploadTime" matInput placeholder="uploadTime:">-->
 <!--    </mat-form-field>-->
-    <button (click)="search()" color="primary" mat-mini-fab>
-      <mat-icon>search</mat-icon>
-    </button>
-    <button (click)="resetSearch()" color="primary" mat-mini-fab>
-      <mat-icon>close</mat-icon>
-    </button>
+<!--    <button (click)="search()" color="primary" mat-mini-fab>-->
+<!--      <mat-icon>search</mat-icon>-->
+<!--    </button>-->
+<!--    <button (click)="resetSearch()" color="primary" mat-mini-fab>-->
+<!--      <mat-icon>close</mat-icon>-->
+<!--    </button>-->
   </mat-card-content>
 </mat-card>
 
-<app-crud (create)="create()" (delete)=delete($event) (read)="read($event)"
-          (update)="update($event)" [columns]="columns" [data]="data" [title]="title"></app-crud>
+
+
+<div class="body" id="body">
+  <div class="container" id="container">
+    <div *ngFor="let picture of pictures">
+      <img src={{picture.image}} style="width:400px;">
+      <a>{{picture.owner}} </a>
+    </div>
+  </div>
+</div>

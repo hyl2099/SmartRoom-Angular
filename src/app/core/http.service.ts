@@ -77,6 +77,10 @@ export class HttpService {
     return this.http.get('http://localhost:8080/getImages');
   }
 
+  getPictures():Observable<any>{
+    return this.http.get('http://localhost:8080/pictures');
+  }
+
   post(endpoint: string, body?: object): Observable<any> {
     return this.http.post(HttpService.API_END_POINT + endpoint, body, this.createOptions()).pipe(
       map(response => this.extractData(response)

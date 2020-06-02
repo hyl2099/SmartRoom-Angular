@@ -69,7 +69,8 @@ export class PictureCreateUpdateComponent {
     owner:string,
     remark:string,
     photo:File,
-    uploadTime:Date;
+    image:null;
+    uploadTime:Date
   }
   // **设置的图片框默认显示一张图片*/
   imgSrc = '../../../assets/images/nuevo.png';
