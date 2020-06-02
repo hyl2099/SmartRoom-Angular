@@ -7,6 +7,7 @@ import {WelcomeComponent} from './welcome.component';
 import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './home/users/users.component';
 import {VideosComponent} from './home/videos/videos.component';
+import {DoorbellsComponent} from './home/doorbells/doorbells.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'welcome'},
@@ -19,7 +20,7 @@ const routes: Routes = [
       {path: 'pictures', component: PicturesComponent},
       {path: 'pictures/update', component: PictureCreateUpdateComponent},
       {path: 'videos', component: VideosComponent},
-      // {path: 'doorbells', component: DoorbellsComponent}
+      {path: 'doorbells', component: DoorbellsComponent}
     ]
   }
 ];
