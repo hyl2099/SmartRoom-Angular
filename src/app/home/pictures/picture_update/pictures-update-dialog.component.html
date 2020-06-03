@@ -1,25 +1,15 @@
 <h3 mat-dialog-title>Update Picture</h3>
 <mat-dialog-content>
   <mat-form-field>
-    <input [(ngModel)]="picture.owner" cdkFocusInitial matInput
-           placeholder="TicketId"
-           readonly required type="text"/>
+    <input [(ngModel)]="newPicture.owner"  matInput placeholder="Owner"/>
   </mat-form-field>
   <mat-form-field>
-    <input [(ngModel)]="picture.remark" matInput
-           placeholder="Username"
-           readonly required type="text"/>
+    <input [(ngModel)]="newPicture.remark" matInput placeholder="Remark" type="text"/>
   </mat-form-field>
-
-
-  <mat-slide-toggle [(ngModel)]="picture.uploadTime">Estado</mat-slide-toggle>
-
 </mat-dialog-content>
-
 <mat-dialog-actions>
-  <button mat-dialog-close mat-raised-button>Close</button>
   <button (click)="update()" color="primary" mat-raised-button>
-    <mat-icon>update</mat-icon>
-    <span>Update Sendings</span>
+    <span>Update</span>
   </button>
+  <button mat-dialog-close mat-raised-button>Close</button>
 </mat-dialog-actions>

@@ -5,6 +5,7 @@ import {HttpService} from '../../core/http.service';
 import {AppEndpoints} from '../../app-endpoints';
 import {PicturesDetailDialogComponent} from './picture_detail/pictures-detail-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {Form} from '@angular/forms';
 
 @Injectable()
 export class PicturesService {
@@ -42,8 +43,8 @@ export class PicturesService {
     return this.httpService.post(AppEndpoints.PICTURES_SAVE, picture);
   }
 
-  update(newPicture: Picture): Observable<Picture> {
-    return this.httpService.put(AppEndpoints.PICTURES + '/', newPicture);
+  update(newPicture: any): Observable<Picture> {
+    return this.httpService.patch(AppEndpoints.PICTURES_UPDATE + '/' + newPicture.id,newPicture);
   }
 
   delete(picture: Picture): Observable<Picture> {

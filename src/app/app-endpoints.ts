@@ -14,6 +14,10 @@ export class AppEndpoints {
   static PICTURES_OWNER = '/pictures/owner'
   // 删除图片
   static PICTURES_DELETE = '/pictures/delete'
+  // put更新图片
+  static PICTURES_UPDATE = '/pictures/update'
+
+
 
   static SYSTEM_APP_INFO = '/system/app-info';
 

@@ -56,11 +56,7 @@ export class PicturesComponent implements OnInit{
         update:true
       }
     }).afterClosed().subscribe(result => {
-      if (result) {
-        this.httpService.getPictures().subscribe(response=>{
-          this.pictures = response;
-        });
-      }
+        this.readAll();
     });
   }
 
@@ -84,7 +80,9 @@ export class PicturesComponent implements OnInit{
           id: picture.id
         }
       }
-    );
+    ).afterClosed().subscribe(result => {
+        this.readAll();
+    });
   }
 
   delete(picture: Picture) {
@@ -95,7 +93,9 @@ export class PicturesComponent implements OnInit{
           id: picture.id
         }
       }
-    );
+    ).afterClosed().subscribe(result => {
+        this.readAll();
+    });
   }
 
 }
