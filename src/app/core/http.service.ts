@@ -72,11 +72,12 @@ export class HttpService {
     this.header('Accept', 'application/pdf , application/json');
     return this;
   }
-
+  // 书写不规范，获取文件夹中全部图片。
   getImages():Observable<any>{
     return this.http.get('http://localhost:8080/getImages');
   }
 
+  // 书写不规范，获取全部图片全部信息。
   getPictures():Observable<any>{
     return this.http.get('http://localhost:8080/pictures');
   }

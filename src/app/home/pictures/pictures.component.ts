@@ -11,12 +11,17 @@ import {HttpService} from '../../core/http.service';
   styleUrls: ['./pictures.component.css']
 })
 export class PicturesComponent implements OnInit{
+  // 用来获取搜索栏中输入的信息
+  picture:Picture;
+  // 用来获取backend传回的所有图片信息
   pictures: Picture[] =[];
   title = 'Pictures';
   constructor(private dialog: MatDialog, private picturesService: PicturesService,private httpService: HttpService) {
     this.pictures= null;
+    this.picture={id:null,owner:'',uploadTime: null, path: '',photo: null,image:null,remark: ''};
   }
 
+  // 初始化就读取所有的图片信息
   ngOnInit(): void {
     this.httpService.getPictures().subscribe(response=>{
       this.pictures = response;
@@ -24,24 +29,24 @@ export class PicturesComponent implements OnInit{
   }
 
   readAll(){
-    this.picturesService.readAll().subscribe(
-      data => {this.pictures = data;
-        }
-    );
+    this.httpService.getPictures().subscribe(response=>{
+      this.pictures = response;
+    });
   }
 
-  // search() {
-  //   if (this.picture.owner === '' ) {
-  //     this.picturesService.readAll().subscribe(data => this.data = data);
-  //   } else {
-  //     this.picturesService.readAll().subscribe(data => this.data = data);
-  //   }
-  //
-  // }
-  //
-  // resetSearch() {
-  //   this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null, remark:''};
-  // }
+  search() {
+    if (this.picture.owner === '' ) {
+      this.readAll();
+    } else {
+      this.picturesService.searchByOwner(this.picture.owner).subscribe(response=>{
+        this.pictures = response;
+      });
+    }
+  }
+
+  resetSearch() {
+    this.picture = {id: null, owner: '', uploadTime: null, path: '', photo:null, image: null, remark:''};
+  }
 
   create() {
     this.dialog.open(PictureCreateUpdateComponent, {

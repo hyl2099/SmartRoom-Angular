@@ -2,11 +2,9 @@
   width: 100%;
   text-align: center;
 }
-
 .area_title {
   margin-top: 60px;
 }
-
 
 .area_title h3 {
   height: 20px;
@@ -26,7 +24,7 @@
 }
 
 #texto {
-  /*background-color: #f8f8f8;*/
+  background-color: #f8f8f8;
 }
 
 #service {
@@ -99,9 +97,9 @@ ul{
   column-width:225px;
   column-gap: 3.5px;
 }
-.container div{
-  padding:10px;
-}
+/*.container div{*/
+/*  padding:10px;*/
+/*}*/
 image{
   border-radius: 10%;
   width:400px;

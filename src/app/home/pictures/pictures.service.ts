@@ -13,15 +13,15 @@ export class PicturesService {
   }
 
   readAll(): Observable<Picture[]> {
-    return this.httpService.get(AppEndpoints.PICTURES_ALL);
+    return this.httpService.get(AppEndpoints.PICTURES);
   }
 
-  search(id: string, owner: string, uploadTime: string, remark: string): Observable<Picture[]> {
-    this.httpService.param('id', id);
-    this.httpService.param('owner', owner);
-    this.httpService.param('uploadTime', uploadTime);
-    this.httpService.param('remark', remark);
-    return this.httpService.get(AppEndpoints.PICTURES);
+  searchByOwner(owner: string): Observable<Picture[]> {
+    return this.httpService.get(AppEndpoints.PICTURES_OWNER+ '/' + owner);
+  }
+
+  searchById(id: number): Observable<Picture[]> {
+    return this.httpService.get(AppEndpoints.PICTURES_ID+ '/' + id);
   }
 
   searchPhoto(id: number): Observable<Picture>{
