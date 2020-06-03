@@ -40,6 +40,8 @@ import {AppComponents} from './app-components';
 import {PicturesDetailDialogComponent} from './home/pictures/picture_detail/pictures-detail-dialog.component';
 import {VideosComponent} from './home/videos/videos.component';
 import {DoorbellsComponent} from './home/doorbells/doorbells.component';
+import {PicturesDeleteDialogComponent} from './home/pictures/picture_delete/pictures-delete-dialog.component';
+import {PicturesUpdateDialogComponent} from './home/pictures/picture_update/pictures-update-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +50,12 @@ import {DoorbellsComponent} from './home/doorbells/doorbells.component';
     MenuComponent,
     IndexcontentComponent,
     LoginComponent,
-    PicturesComponent,
     VideosComponent,
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
+    PicturesDeleteDialogComponent,
+    PicturesUpdateDialogComponent,
     HomeComponent,
     WelcomeComponent,
     UsersCreationDialogComponent,

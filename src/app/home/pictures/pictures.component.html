@@ -25,7 +25,7 @@
   <mat-card-content>
     <div class="container" id="container">
       <div *ngFor="let picture of pictures">
-        <img src={{picture.image}} style="width:400px;">
+        <img src="{{picture.image}}" style="width:400px;">
         <br>
         <a *ngIf="picture.owner.length  > 10 "> {{picture.owner.substring(0,10)+'...'}} </a>
         <a *ngIf="picture.owner.length  <= 10 "> {{picture.owner}} </a>

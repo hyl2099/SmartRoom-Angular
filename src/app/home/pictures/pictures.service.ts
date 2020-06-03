@@ -16,14 +16,20 @@ export class PicturesService {
     return this.httpService.get(AppEndpoints.PICTURES);
   }
 
+  // 根据owner获取图片全部信息
+  // pictures/owner/4
   searchByOwner(owner: string): Observable<Picture[]> {
     return this.httpService.get(AppEndpoints.PICTURES_OWNER+ '/' + owner);
   }
-
-  searchById(id: number): Observable<Picture[]> {
+  // 根据获取图片全部信息
+  // pictures/id/4
+  searchById(id: number): Observable<Picture> {
+    // pictures/id/4
     return this.httpService.get(AppEndpoints.PICTURES_ID+ '/' + id);
   }
 
+  // 不需要了。
+  // 根据ID获取图片文件
   searchPhoto(id: number): Observable<Picture>{
     // 带参数用这个，相当于/picturesphoto?id=4
     // this.httpService.param('id', picture.id.toString());
@@ -38,5 +44,9 @@ export class PicturesService {
 
   update(newPicture: Picture): Observable<Picture> {
     return this.httpService.put(AppEndpoints.PICTURES + '/', newPicture);
+  }
+
+  delete(picture: Picture): Observable<Picture> {
+    return this.httpService.delete(AppEndpoints.PICTURES_DELETE  + '/' + picture.id);
   }
 }

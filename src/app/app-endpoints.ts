@@ -12,6 +12,8 @@ export class AppEndpoints {
   static PICTURES_ID = '/pictures/id'
   // 根据owner返回全部图片信息
   static PICTURES_OWNER = '/pictures/owner'
+  // 删除图片
+  static PICTURES_DELETE = '/pictures/delete'
 
   static SYSTEM_APP_INFO = '/system/app-info';
 

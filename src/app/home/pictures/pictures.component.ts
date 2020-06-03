@@ -5,6 +5,8 @@ import {PictureCreateUpdateComponent} from './picture_creat_update_dialog/pictur
 import {MatDialog} from '@angular/material/dialog';
 import {PicturesDetailDialogComponent} from './picture_detail/pictures-detail-dialog.component';
 import {HttpService} from '../../core/http.service';
+import {PicturesDeleteDialogComponent} from './picture_delete/pictures-delete-dialog.component';
+import {PicturesUpdateDialogComponent} from './picture_update/pictures-update-dialog.component';
 
 @Component({
   templateUrl: './pictures.component.html',
@@ -50,16 +52,14 @@ export class PicturesComponent implements OnInit{
 
   create() {
     this.dialog.open(PictureCreateUpdateComponent, {
-      // width: '60%',
-      // height: '90%',
       data: {
-        // dialogMode: 'create',
-        // picture: {}
-        update:false
+        update:true
       }
     }).afterClosed().subscribe(result => {
       if (result) {
-        this.readAll();
+        this.httpService.getPictures().subscribe(response=>{
+          this.pictures = response;
+        });
       }
     });
   }
@@ -77,10 +77,25 @@ export class PicturesComponent implements OnInit{
 
   update(picture: Picture) {
     // TODO
+    this.dialog.open(PicturesUpdateDialogComponent,
+      {
+        // width: '400px',
+        data: {
+          id: picture.id
+        }
+      }
+    );
   }
 
   delete(picture: Picture) {
-    // TODO
+    this.dialog.open(PicturesDeleteDialogComponent,
+      {
+        // width: '400px',
+        data: {
+          id: picture.id
+        }
+      }
+    );
   }
 
 }
