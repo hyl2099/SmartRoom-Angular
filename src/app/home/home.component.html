@@ -21,8 +21,6 @@
   </span>
 </mat-toolbar>
 
-
-
 <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
   <div (mouseleave)="matMenuTrigger.closeMenu()">
     <button mat-menu-item routerLink="/home/users">
@@ -33,51 +31,11 @@
       <mat-icon>photo_library</mat-icon>
       <span>pictures</span>
     </button>
-    <button mat-menu-item routerLink="/home/videos">
-      <mat-icon>movie_creation</mat-icon>
-      <span>videos</span>
-    </button>
-    <button mat-menu-item routerLink="/home/doorbells">
-      <mat-icon>notifications</mat-icon>
-      <span>doorbells</span>
+    <button mat-menu-item routerLink="/home/temperature">
+      <mat-icon>wb_sunny</mat-icon>
+      <span>Temperature</span>
     </button>
   </div>
 </mat-menu>
-
-
-
-
-<!--<mat-menu #menu="matMenu" xPosition="before">-->
-<!--  <button [matMenuTriggerFor]="users" mat-menu-item>-->
-<!--    <mat-icon>people</mat-icon>-->
-<!--    <span>Users</span>-->
-<!--  </button>-->
-<!--  <button [matMenuTriggerFor]="medias" mat-menu-item>-->
-<!--    <mat-icon>people</mat-icon>-->
-<!--    <span>Pictures & Videos</span>-->
-<!--  </button>-->
-<!--</mat-menu>-->
-
-
-<!--<mat-menu #users="matMenu">-->
-<!--  <button mat-menu-item routerLink="/home/users">-->
-<!--    <mat-icon>account_circle</mat-icon>-->
-<!--    <span>Users</span>-->
-<!--  </button>-->
-<!--</mat-menu>-->
-<!--<mat-menu #medias="matMenu">-->
-<!--  <button mat-menu-item routerLink="/home/pictures">-->
-<!--    <mat-icon>account_circle</mat-icon>-->
-<!--    <span>pictures</span>-->
-<!--  </button>-->
-<!--  <button mat-menu-item routerLink="/home/videos">-->
-<!--    <mat-icon>account_circle</mat-icon>-->
-<!--    <span>videos</span>-->
-<!--  </button>-->
-<!--  <button mat-menu-item routerLink="/home/doorbells">-->
-<!--    <mat-icon>account_circle</mat-icon>-->
-<!--    <span>doorbells</span>-->
-<!--  </button>-->
-<!--</mat-menu>-->
 
 <router-outlet></router-outlet>

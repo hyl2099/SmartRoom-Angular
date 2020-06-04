@@ -19,7 +19,6 @@ export class LoginDialogComponent {
   login() {
     this.tokensService.login(this.email, this.password).subscribe(
       () => {
-        console.log('log in');
         this.router.navigate([this.homeUrl]);
       }
     );

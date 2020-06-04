@@ -17,7 +17,8 @@ export class AppEndpoints {
   // put更新图片
   static PICTURES_UPDATE = '/pictures/update'
 
-
+  static TEMPERATURE_ALL = '/temperature/all'
+  static TEMPERATURE_DELETE = '/temperature/delete'
 
   static SYSTEM_APP_INFO = '/system/app-info';
 

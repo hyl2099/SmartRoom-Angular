@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PicturesComponent } from './home/pictures/pictures.component';
-import {MenuComponent} from './menu/menu.component';
 import {PictureCreateUpdateComponent} from './home/pictures/picture_creat_update_dialog/picture-create-update.component';
 import {WelcomeComponent} from './welcome.component';
 import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './home/users/users.component';
-import {VideosComponent} from './home/videos/videos.component';
-import {DoorbellsComponent} from './home/doorbells/doorbells.component';
+import {TemperatureComponent} from './home/temperature/temperature.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'welcome'},
@@ -16,11 +14,9 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
     children: [
       {path: 'users', component: UsersComponent},
-      {path: 'menu', component: MenuComponent},
       {path: 'pictures', component: PicturesComponent},
       {path: 'pictures/update', component: PictureCreateUpdateComponent},
-      {path: 'videos', component: VideosComponent},
-      {path: 'doorbells', component: DoorbellsComponent}
+      {path: 'temperature', component: TemperatureComponent},
     ]
   }
 ];

@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
 import { IndexcontentComponent } from './indexcontent/indexcontent.component';
 import { LoginComponent } from './login/login.component';
 import { LoginDialogComponent  } from './core/login-dialog.component';
@@ -38,19 +37,17 @@ import {AppMaterialModule} from './app-material.module';
 import {CdkTableModule} from '@angular/cdk/table';
 import {AppComponents} from './app-components';
 import {PicturesDetailDialogComponent} from './home/pictures/picture_detail/pictures-detail-dialog.component';
-import {VideosComponent} from './home/videos/videos.component';
-import {DoorbellsComponent} from './home/doorbells/doorbells.component';
 import {PicturesDeleteDialogComponent} from './home/pictures/picture_delete/pictures-delete-dialog.component';
 import {PicturesUpdateDialogComponent} from './home/pictures/picture_update/pictures-update-dialog.component';
+import {TemperatureComponent} from './home/temperature/temperature.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    MenuComponent,
     IndexcontentComponent,
     LoginComponent,
-    VideosComponent,
+    TemperatureComponent,
     RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
@@ -62,7 +59,6 @@ import {PicturesUpdateDialogComponent} from './home/pictures/picture_update/pict
     UsersDetailDialogComponent,
     UsersComponent,
     PicturesDetailDialogComponent,
-    DoorbellsComponent,
     AppComponent,
     AppComponents.COMPONENTS,
     AppComponents.DIALOGS

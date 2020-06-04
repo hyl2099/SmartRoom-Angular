@@ -53,8 +53,6 @@ export class RegistroComponent implements OnInit {
     this.password = this.formModel.get('password').value;
     this.repeatpassword = this.formModel.get('repeatpassword').value;
     this.email = this.formModel.get('email').value;
-    console.log(this.username);
-    console.log(this.email);
     this.registerurl = this.baseurl + '/users?username=' + this.username + '&password=' + this.password + '&email=' + this.email;
 
     if (this.repeatpassword === this.password) {

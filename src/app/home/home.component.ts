@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpService} from '../core/http.service';
 import {TokensService} from '../core/tokens.service';
-import {CancelYesDialogComponent} from '../core/cancel-yes-dialog.component';
 import {AdminsService} from './admins.service';
 import {UserService} from './shared/users/user.service';
 import {SystemService} from './system.service';
