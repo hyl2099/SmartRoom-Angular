@@ -8,11 +8,12 @@ import {Temperature} from './temperature.model';
 export class TemperatureComponent implements OnInit{
   temperature: Temperature;
   title = 'Temperature And Humidity';
-  columns = ['temperature', 'humidity', 'time'];
+  columns = ['time','temperatureIndoor', 'temperatureOutdoor', 'humidityIndoor','humidityOutdoor'];
   data: Temperature[];
 
   constructor(private temperatureService: TemperatureService){
-    this.temperature = {id: null, temperature: null, humidity: null,time: null};
+    this.temperature = {id: null, temperatureIndoor: null, temperatureOutdoor: null,
+      humidityIndoor: null, humidityOutdoor: null, time: null};
     this.data = null;
   }
 
@@ -29,7 +30,8 @@ export class TemperatureComponent implements OnInit{
   }
 
   resetSearch() {
-    this.temperature = {id: null, temperature: null, humidity: null,time: null};
+    this.temperature = {id: null, temperatureIndoor: null, temperatureOutdoor: null,
+      humidityIndoor: null, humidityOutdoor: null, time: null};
   }
 
   delete(temperature: Temperature) {

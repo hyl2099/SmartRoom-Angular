@@ -1,6 +1,8 @@
 export interface Temperature {
   id: number;
-  temperature: string;
-  humidity:string;
+  temperatureIndoor: string;
+  humidityIndoor:string;
+  temperatureOutdoor: string;
+  humidityOutdoor:string;
   time: string;
 }
