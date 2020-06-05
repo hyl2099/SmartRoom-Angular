@@ -8,7 +8,7 @@ import {Temperature} from './temperature.model';
 export class TemperatureComponent implements OnInit{
   temperature: Temperature;
   title = 'Temperature And Humidity';
-  columns = ['Time', 'Temperature', 'Humidity'];
+  columns = ['temperature', 'humidity', 'time'];
   data: Temperature[];
 
   constructor(private temperatureService: TemperatureService){
@@ -17,11 +17,15 @@ export class TemperatureComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.temperatureService.readAll().subscribe(data => this.data = data);
+    this.temperatureService.readAll().subscribe(data => {
+      this.data = data;
+    });
   }
 
   search(){
-    this.temperatureService.readAll().subscribe(data => this.data = data);
+    this.temperatureService.readAll().subscribe(data => {
+      this.data = data;
+    });
   }
 
   resetSearch() {

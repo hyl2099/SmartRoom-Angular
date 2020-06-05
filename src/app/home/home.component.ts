@@ -30,7 +30,7 @@ export class HomeComponent {
     //   appInfo => this.backend = appInfo.version + '(' + appInfo.profile + ')'
     // );
     this.username = tokensService.getName();
-    this.email = tokensService.getEmail().toString();
+    this.email = tokensService.getEmail();
   }
 
   // deleteDb() {

@@ -3,9 +3,7 @@ import {Observable} from 'rxjs';
 import {Picture} from './pictures.model';
 import {HttpService} from '../../core/http.service';
 import {AppEndpoints} from '../../app-endpoints';
-import {PicturesDetailDialogComponent} from './picture_detail/pictures-detail-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
-import {Form} from '@angular/forms';
 
 @Injectable()
 export class PicturesService {

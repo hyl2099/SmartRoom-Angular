@@ -1,12 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { IndexcontentComponent } from './indexcontent/indexcontent.component';
-import { LoginComponent } from './login/login.component';
 import { LoginDialogComponent  } from './core/login-dialog.component';
 
-import { RegistroComponent } from './registro/registro.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
@@ -44,11 +40,7 @@ import {TemperatureComponent} from './home/temperature/temperature.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    IndexcontentComponent,
-    LoginComponent,
     TemperatureComponent,
-    RegistroComponent,
     PicturesComponent,
     PictureCreateUpdateComponent,
     PicturesDeleteDialogComponent,
